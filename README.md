@@ -1,4 +1,2 @@
 # project-euler
-exponential impact
-
-Why leetcode? 
+exponential impact :rocket::rocket::rocket:
