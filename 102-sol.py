@@ -1,14 +1,13 @@
-import numpy as np
 from datetime import datetime
 startTime = datetime.now()
 
 results = 0
 
 def total_area(ts):
-	return np.abs(ts[0][0] * (ts[1][1] - ts[2][1]) - ts[0][1] * (ts[1][0] - ts[2][0]) + ts[0][2] * (ts[1][0] * ts[2][1] - ts[1][1] * ts[2][0]))
+	return abs(ts[0][0] * (ts[1][1] - ts[2][1]) - ts[0][1] * (ts[1][0] - ts[2][0]) + ts[0][2] * (ts[1][0] * ts[2][1] - ts[1][1] * ts[2][0]))
 
 def splited_area(s):
-	return np.abs(s[0][0] * s[1][1] - s[0][1] * s[1][0])
+	return abs(s[0][0] * s[1][1] - s[0][1] * s[1][0])
 
 with open("p102_triangles.txt") as f:
 	for line in f:
