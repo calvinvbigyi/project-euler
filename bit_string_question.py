@@ -36,3 +36,30 @@ def replace_erin(string):
     return [string.replace('?','{}').format(*p) for p in itertools.product([0,1], repeat=string.count('?'))]
 
 print(replace_erin('?01?'))
+
+
+#berkay's solution
+def replace_berkay(x):
+	if x == '':
+		yield ''
+	else:
+		for s in replace_berkay(x[1:]):
+			if x[0] == '?':
+				yield '0' + s
+				yield '1' + s
+			else:
+				yield x[0] + s
+
+print(replace_erin('?01?'))
+
+#brett's solution
+def match_bits(pattern):
+    vals = [""]
+    for m in pattern:
+        if m == "?":
+            vals = [v + "0" for v in vals] +  [v + "1" for v in vals]
+        else:
+            vals = [v + m for v in vals]
+    return vals
+    
+print(match_bits('?01?'))
